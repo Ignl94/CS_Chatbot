@@ -20,3 +20,27 @@ def get_bot_response(user_response):
         return "Zoltar is bad at math."
     else:
         return "Zoltar is late for back massage, how can I help you?"
+
+
+def get_bot_fortune(user_response):
+    bot_fortunes = ["The answer to that is relative", "Allow Zoltar to refer to his scrolls",
+                    "To know that you know not, is the greatest form of wisdom", "It is best to look within yourself."]
+    if user_response.isnumeric():
+        return "Zoltar is bad at math."
+    else:
+        return choice(bot_fortunes)
+
+
+print('Welcome to the Zoltar Chatbot!')
+print('Speak to Zoltar and get your fortune!')
+user_response = " "
+fortune_counter = 0
+while True and fortune_counter < 2:
+    fortune_counter = 0
+    user_response = input('Say hello to Zoltar. ')
+    if user_response == 'done' or user_response == 'goodbye' or user_response == 'Bye Zoltar' or user_response == 'bye zoltar':
+        print('Goodbyes from Zoltar')
+        break
+    zoltar_response = get_bot_response(user_response)
+    print(zoltar_response)
+    .')
