@@ -43,4 +43,33 @@ while True and fortune_counter < 2:
         break
     zoltar_response = get_bot_response(user_response)
     print(zoltar_response)
-    .')
+    # ---------------------------------------- Fortune Portion ------------------------------------------------------
+    user_response = input('Would you like Zoltar to read your fortune? ')
+    if user_response == 'done' or user_response == 'goodbye' or user_response == 'Bye Zoltar' or user_response == 'bye zoltar' or user_response == 'no' or user_response == 'No' or user_response == 'No thanks':
+        print('Goodbyes from Zoltar')
+        break
+    elif user_response == 'yes' or user_response == 'Yes' or user_response == 'ok' or user_response == 'Ok' or user_response == 'sure' or user_response == 'Sure':
+        user_response = input("Ask Zoltar a question. ")
+        zoltar_fortune = get_bot_fortune(user_response)
+        print(zoltar_fortune)
+        fortune_counter += 1
+        user_response = input(
+            'Would you like to ask Zoltar one more question? ')
+        if user_response == 'yes' or user_response == 'Yes' or user_response == 'ok' or user_response == 'Ok' or user_response == 'sure' or user_response == 'Sure':
+            user_response = input("Ask Zoltar a question. ")
+            zoltar_fortune = get_bot_fortune(user_response)
+            print(zoltar_fortune)
+            print('Zoltar thanks you for your visit, goodbyes from Zoltar!')
+            fortune_counter += 1
+        elif user_response == 'done' or user_response == 'goodbye' or user_response == 'Bye Zoltar' or user_response == 'bye zoltar' or user_response == 'no' or user_response == 'No' or user_response == 'No thanks':
+            print('Goodbyes from Zoltar')
+            break
+        elif user_response.isnumeric():
+            print('Zoltar is bad at math.')
+        else:
+            print('Zoltar does not understand')
+    elif user_response.isnumeric():
+        print('Zoltar is bad at math.')
+    else:
+        print('Zoltar does not understand.')
+
